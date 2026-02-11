@@ -8,6 +8,7 @@ export const makeUnauthPostReq = async (route, body) => {
         headers: {
             'Content-Type': 'application/json'
         },
+        credentials: 'include',
         body: JSON.stringify(body)
     });
     
@@ -28,6 +29,7 @@ export const makeAuthPostReq = async (route, body) => {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
         },
+        credentials: 'include',
         body: JSON.stringify(body),
     });
 
