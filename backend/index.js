@@ -23,7 +23,10 @@ const app = express();
 // Setting up the port for the server
 const PORT = 5000 || process.env.PORT;
 
-app.use(cors());
+app.use(cors( {
+  origin: "https://doctor-appointment-snowy-ten.vercel.app/",   // explicitly allow your frontend
+  credentials: true                  // allow cookies/headers
+}));
 // Middleware to parse incoming JSON data
 app.use(express.json());
 
